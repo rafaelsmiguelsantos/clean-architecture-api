@@ -5,13 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --passWithNoTests --runInBand --no-cache",
-    "test:staged": "npm test -- --findRelatedTests",
-    "test:ci": "npm test -- --coverage",
     "prepare": "husky install"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
+      "pre-commit": "npm run lint-staged",
       "pre-push": "git diff HEAD --quiet && npm run test && npm run lint"
     }
   },
